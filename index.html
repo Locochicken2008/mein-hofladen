@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hausschlachterei Manuel Wecker - Hövelhof | Qualität seit 1988</title>
+    <style>
+        /* Modernes Farbschema */
+        :root {
+            --primary-color: #8b0000; /* Dunkelrot */
+            --secondary-color: #d4a017; /* Gold/Gelb für Akzente */
+            --dark-bg: #333;
+            --light-bg: #f9f9f9;
+            --text-color: #444;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            line-height: 1.7; 
+            color: var(--text-color); 
+            background-color: var(--light-bg);
+        }
+
+        /* Header mit Logo */
+        header { 
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 1rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+
+        header img {
+            max-height: 100px;
+        }
+
+        header .header-text {
+            text-align: right;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        /* Navigation */
+        nav { 
+            background: var(--primary-color); 
+            display: flex; 
+            justify-content: center; 
+            padding: 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a { 
+            color: var(--white); 
+            padding: 1rem 1.5rem;
+            text-decoration: none; 
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover { 
+            background: var(--secondary-color); 
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('image_1.jpeg') center/cover no-repeat; /* Verwendet das Bild des Metzgers als Hintergrund */
+            color: var(--white);
+            padding: 6rem 2rem; 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button { 
+            background: var(--secondary-color); 
+            color: var(--primary-color); 
+            padding: 12px 30px; 
+            text-decoration: none; 
+            border-radius: var(--border-radius); 
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 160, 23, 0.4);
+        }
+
+        /* Hauptinhalt */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section { 
+            padding: 3rem; 
+            margin-bottom: 3rem; 
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            display: inline-block;
+        }
+        
+        h3 {
+            color: var(--dark-bg);
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: "✓";
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Spezielle Boxen für Kontakt & Öffnungszeiten */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .info-box p {
+            margin: 0.5rem 0;
+        }
+
+        /* Footer */
+        footer { 
+            background: var(--dark-bg); 
+            color: var(--white); 
+            text-align: center; 
+            padding: 2rem; 
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        footer a { 
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header .header-text {
+                text-align: center;
+                margin-top: 1rem;
+            }
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="image_0.jpeg" alt="Hausschlachterei Werner Wecker Logo - Seit 1988">
+    <div class="header-text">
+        <h1>Hausschlachterei Manuel Wecker</h1>
+        <p>Qualität aus eigener Schlachtung & Herstellung in Hövelhof</p>
+    </div>
+</header>
+
+<nav>
+    <a href="#ueber-uns">Über uns</a>
+    <a href="#angebot">Angebot</a>
+    <a href="#partnerschaft">Partnerschaften</a>
+    <a href="#oeffnungszeiten">Öffnungszeiten</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<div class="hero">
+    <h2>Traditionelles Handwerk. Moderner Genuss.</h2>
+    <p>Entdecken Sie unsere frischen Fleisch- und Wurstspezialitäten, hergestellt mit Leidenschaft und Sorgfalt nach alten Familienrezepten.</p>
+    <a href="#oeffnungszeiten" class="cta-button">Hofladen besuchen</a>
+</div>
+
+<div class="container">
+
+    <div id="ueber-uns" class="section">
+        <h2>Über unsere Hausschlachterei</h2>
+        <p>Wir stehen für traditionelle Hausschlachtung und hofeigene Tierhaltung. Unsere Spezialitäten wie die herzhafte Mettwurst und unser westfälischer Schinken werden nach bewährten alten Familienrezepten hergestellt. Qualität und Frische haben für uns oberste Priorität.</p>
+        </div>
+
+    <div id="angebot" class="section">
+        <h2>Unser vielfältiges Angebot</h2>
+        <ul>
+            <li>Frisches Rind- und Schweinefleisch aus eigener Schlachtung</li>
+            <li>Hausmacher Wurstspezialitäten (z.B. Mettwurst, Leberwurst)</li>
+            <li>Regionale Wildprodukte</li>
+            <li>Individuelle Präsentkörbe für jeden Anlass</li>
+        </ul>
+        <p>Unsere beliebten Wecker-Würste finden Sie nicht nur in unserem Hofladen, sondern auch im Raiffeisen Markt, bei Spieker in Riege und an der AVIA-Tankstelle.</p>
+    </div>
+
+    <div id="partnerschaft" class="section" style="background-color: #fffbeb; border-color: var(--secondary-color);">
+        <h2>Unsere Partner</h2>
+        <p>Wir freuen uns über unsere Partnerschaft mit dem <strong>Hofladen Große Wächter</strong> in Verl-Sende. Dort finden regelmäßig spezielle Rindfleisch-Verkaufstage statt. Halten Sie Ausschau nach den nächsten Terminen!</p>
+    </div>
+
+    <div class="contact-grid">
+        <div id="oeffnungszeiten" class="section info-box">
+            <h2>Öffnungszeiten Hofladen</h2>
+            <p>Besuchen Sie uns am Kösterweg:</p>
+            <p><strong>Montag - Freitag:</strong><br> 07:30 - 18:00 Uhr</p>
+            <p><strong>Samstag:</strong><br> 08:00 - 14:00 Uhr</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;"><em>Hinweis: Im Sommer haben wir teilweise verlängerte Öffnungszeiten (in der Woche bis 19 Uhr, Samstags bis 18 Uhr).</em></p>
+        </div>
+
+        <div id="kontakt" class="section info-box">
+            <h2>Kontakt & Anfahrt</h2>
+            <p><strong>Adresse:</strong><br>
+            Hausschlachterei Manuel Wecker<br>
+            Kösterweg 10<br>
+            33161 Hövelhof</p>
+            <p><strong>Telefon:</strong> <a href="tel:+4952574985" style="color: var(--primary-color); text-decoration: none;">05257 4985</a></p>
+            <p><strong>E-Mail:</strong> <a href="mailto:ma.wecker@outlook.de" style="color: var(--primary-color); text-decoration: none;">ma.wecker@outlook.de</a></p>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://www.instagram.com/hausschlachterei_wecker" target="_blank" class="cta-button" style="padding: 8px 16px; font-size: 0.9rem;">Auf Instagram folgen</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Hausschlachterei Manuel Wecker | <a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Handwerklich. Regional. Gut.</p>
+</footer>
+
+</body>
+</html>
